@@ -8,7 +8,7 @@ It suggests movies similar to the one selected by the user, based on metadata su
 
 ## 🚀 Demo
 
-![App Screenshot](Movie%20recommender%20system.jpg)
+![App Screenshot](Screenshot.jpg)
 
 ---
 
