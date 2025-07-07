@@ -1,0 +1,64 @@
+import pickle
+import streamlit as st
+from sklearn.metrics.pairwise import cosine_similarity
+from PIL import Image
+
+# Load data
+df1 = pickle.load(open('movie_list.pkl', 'rb'))
+tfidf_matrix = pickle.load(open('tfidf_matrix.pkl', 'rb'))
+
+# App Header
+image = Image.open('Movie recommender system.jpg')
+st.image(image, use_column_width=True)
+
+st.title("🎬 Movie Recommender System")
+st.markdown("This content-based recommendation system uses movie metadata such as genre, cast, director, and description to suggest similar titles.")
+
+# Movie selection
+movies_list = df1['title'].values
+selected_movie = st.selectbox('🎥 Select a Movie:', movies_list)
+
+# Recommendation function
+@st.cache_data
+def get_recommendation(title):
+    idx = df1[df1['title'] == title].index[0]
+    poster = f'https://image.tmdb.org/t/p/w500/{df1.loc[idx, "poster_path"]}'
+    rate = df1.loc[idx, "vote_average"]
+    overview = df1.loc[idx, "overview"]
+
+    sim_scores = list(enumerate(cosine_similarity(tfidf_matrix, tfidf_matrix[idx])))
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)[1:10]
+    movie_indices = [i[0] for i in sim_scores]
+    result = df1.iloc[movie_indices]
+
+    recommended = {
+        "titles": result['title'].tolist(),
+        "posters": [f'https://image.tmdb.org/t/p/w500/{p}' for p in result['poster_path']],
+        "overviews": result['overview'].tolist(),
+        "rates": result['vote_average'].tolist()
+    }
+
+    return poster, rate, overview, recommended
+
+# Show recommendation
+if st.button('🔍 Show Recommendation'):
+    poster, rate, overview, recommended = get_recommendation(selected_movie)
+
+    st.subheader(f"🎞️ {selected_movie}")
+    st.image(poster, width=200)
+    st.markdown(f"⭐ **Rating**: {rate}")
+    with st.expander("📖 Overview"):
+        st.write(overview)
+
+    st.markdown("---")
+    st.subheader("📌 Recommended Movies")
+
+    cols = st.columns(3)
+    for i in range(9):
+        col = cols[i % 3]
+        with col:
+            st.image(recommended["posters"][i], use_column_width=True)
+            st.markdown(f"**{recommended['titles'][i]}**")
+            st.markdown(f"⭐ {recommended['rates'][i]}")
+            with st.expander("📖 Overview"):
+                st.write(recommended["overviews"][i])
