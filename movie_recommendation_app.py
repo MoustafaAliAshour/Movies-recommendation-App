@@ -66,8 +66,6 @@ df = load_data()
 similarity = create_similarity_matrix(df)
 
 if choice == "Home":
-    if image_path:
-        st.image(image_path, use_container_width=True)
     st.title("🎬 Welcome to the Movie Recommendation System")
     st.markdown("""
         This app helps you discover movies similar to the ones you love.
