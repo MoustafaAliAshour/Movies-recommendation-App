@@ -64,25 +64,20 @@ You can build `tags` by combining fields like genre, cast, overview, and keyword
 
 ### 1. Clone the repository
 
-```bash
 git clone https://github.com/MoustafaAliAshour/Movie-Recommendation-System.git
 cd Movie-Recommendation-System
-2. Install dependencies
-bash
-نسخ
-تحرير
-pip install -r requirements.txt
-3. Prepare the pickled files
-Make sure movies.csv is ready, then run:
 
-bash
-نسخ
-تحرير
+### 2. Install dependencies
+
+pip install -r requirements.txt
+
+### 3. Prepare the pickled files
+
+Make sure movies.csv is ready, then run:
 python create_pickle_files.py
-4. Launch the Streamlit app
-bash
-نسخ
-تحرير
+
+### 4. Launch the Streamlit app
+
 streamlit run movie_recommendation_app.py
 ✅ Example Usage
 Select a movie from the dropdown
@@ -91,20 +86,12 @@ Click "Show Recommendation"
 
 Get top 9 similar movies with posters, ratings, and overviews!
 
-📸 Screenshot
-
-📄 License
+## 📄 License
 This project is licensed under the MIT License.
 
-💡 Credits
+## 💡 Credits
 Developed with ❤️ using Streamlit and scikit-learn.
 Inspired by how platforms like Netflix and Prime Video recommend movies.
 
-yaml
-نسخ
-تحرير
-
----
-
-✅ You're all set. Let me know if you want help uploading everything to GitHub or writing `.gitignore`.
-اطرح سؤالك على C
+## 📬 Contact
+For questions or contributions, open an issue or contact: es-moustafa.aly2027@alexu.edu.eg
