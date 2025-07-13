@@ -34,12 +34,19 @@ It suggests movies similar to the one selected by the user, based on metadata su
 ## 📂 Project Structure
 Movie-Recommendation-System/
 ├── movie_recommendation_app.py # Streamlit web app
+
 ├── create_pickle_files.py # Script to create TF-IDF matrix and movie list
+
 ├── movies.csv # Dataset with movie metadata
+
 ├── movie_list.pkl # Pickled movie DataFrame (auto-generated)
+
 ├── tfidf_matrix.pkl # Pickled TF-IDF matrix (auto-generated)
+
 ├── Movie recommender system.jpg # UI image (optional)
+
 ├── requirements.txt # Python dependencies
+
 └── README.md # Project documentation
 
 ---
