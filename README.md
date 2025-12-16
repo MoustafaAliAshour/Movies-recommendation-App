@@ -33,21 +33,21 @@ It suggests movies similar to the one selected by the user, based on metadata su
 
 ## 📂 Project Structure
 Movie-Recommendation-System/
-├── movie_recommendation_app.py # Streamlit web app
+├── movie_recommendation_app.py
 
-├── create_pickle_files.py # Script to create TF-IDF matrix and movie list
+├── create_pickle_files.py
 
-├── movies.csv # Dataset with movie metadata
+├── movies.csv
 
-├── movie_list.pkl # Pickled movie DataFrame (auto-generated)
+├── movie_list.pkl
 
-├── tfidf_matrix.pkl # Pickled TF-IDF matrix (auto-generated)
+├── tfidf_matrix.pkl
 
-├── Movie recommender system.jpg # UI image (optional)
+├── Movie recommender system.jpg
 
-├── requirements.txt # Python dependencies
+├── requirements.txt
 
-└── README.md # Project documentation
+└── README.md
 
 ---
 
