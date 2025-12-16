@@ -30,27 +30,6 @@ It suggests movies similar to the one selected by the user, based on metadata su
 - Pillow  
 
 ---
-
-## 📂 Project Structure
-Movie-Recommendation-System/
-├── movie_recommendation_app.py
-
-├── create_pickle_files.py
-
-├── movies.csv
-
-├── movie_list.pkl
-
-├── tfidf_matrix.pkl
-
-├── Movie recommender system.jpg
-
-├── requirements.txt
-
-└── README.md
-
----
-
 ## 📊 Dataset Requirements
 
 Your `movies.csv` file should contain the following columns:
