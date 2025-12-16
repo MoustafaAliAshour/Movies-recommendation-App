@@ -51,7 +51,6 @@ You can build `tags` by combining fields like genre, cast, overview, and keyword
 ### 1. Clone the repository
 
 git clone [https://github.com/MoustafaAliAshour/Movie-Recommendation-System.git](https://github.com/MoustafaAliAshour/Movies-recommendation-App)
-cd Movie-Recommendation-System
 
 ### 2. Install dependencies
 
@@ -60,12 +59,12 @@ pip install -r requirements.txt
 ### 3. Prepare the pickled files
 
 Make sure movies.csv is ready, then run:
-python create_pickle_files.py
+python movie_recommendation_app.py
 
 ### 4. Launch the Streamlit app
 
 streamlit run movie_recommendation_app.py
-✅ Example Usage
+Example Usage
 Select a movie from the dropdown
 
 Click "Show Recommendation"
